@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "f06d058a-d594-48f8-b536-ebae2f4e57eb",
+		"name": "JWTAuthTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ValidateAuthorize_JWT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userName\":\"gleainmaxwell\",\r\n\"password\":\"maxwell@gleain\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44370/api/Authentication/ValidateAuthorize",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44370",
+					"path": [
+						"api",
+						"Authentication",
+						"ValidateAuthorize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "weatherforecast_WithToken",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE2NDMyMDQ1ODIsImV4cCI6MTY0MzIwNjM4MiwiaWF0IjoxNjQzMjA0NTgyfQ.aJqq79xacopd9NMLMCGbIZMmJFmRay8dHfsSkwENPbA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "ShouldBeComplexOne",
+						"value": "Bearer:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE2NDMyMDQwNDIsImV4cCI6MTY0MzIwNTg0MiwiaWF0IjoxNjQzMjA0MDQyfQ.36jIndxxqsl1Vlt1hUwg8rWlKOBEc2nmhzRtaTqPyl0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44370/weatherforecast",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44370",
+					"path": [
+						"weatherforecast"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
